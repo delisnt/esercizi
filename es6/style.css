@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #202528;
+  color: white;
+  padding: 15px;
+  word-spacing: 10px;
+}
+
+ul > li {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+  
+select[name="dropdown"]{
+    border: none;
+    color: white;
+    background-color: inherit;
+}
+
+.disabled {
+  margin-right: 50px;
+  border: none;
+  opacity: 0.5;
+}
+
+button {
+  background-color: inherit;
+  color: inherit;
+}
+
+input[type="text"]{
+    padding: 5px
+}
+
+.search {
+    border: 1px solid green;
+    color: green;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.search:hover {
+    background-color: green;
+    color: inherit;
+    cursor: pointer;
+}
