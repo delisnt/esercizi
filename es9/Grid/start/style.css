@@ -17,13 +17,16 @@ body {
     display: grid;
     grid-template-rows: repeat(6, 1fr);
     grid-template-columns: repeat(4, 1fr);
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.726);
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 #equals {
     grid-row: 3 / span 4;
     grid-column: 4;
     background-color: #F77077;
-    border-bottom-right-radius: 10px;
+    border-bottom-right-radius: inherit;
 }
 
 #equals > button {
@@ -31,7 +34,7 @@ body {
 }
 
 
-.numbers, .operands, .result {
+.numbers, .operands, .result{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,14 +48,14 @@ body {
     background-color: #424C52;
     justify-content: flex-end;
     font-size: 16px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
 }
 
 
 
 #zero > button, #zero {
-    border-bottom-left-radius: 10px;
+    border-bottom-left-radius: inherit;
 }
 
 .numbers > button {
