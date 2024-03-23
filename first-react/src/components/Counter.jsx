@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import Button from './Button'
 import CounterDisplay from './CounterDisplay';
 
-function Counter( { initialValue = 0, decrementAmount = 1}) {
+function Counter( { initialValue = 0, amount = 1}) {
 
     const [counter, useCounter] = useState(initialValue);
 
     function handleIncrementButton() {
-        useCounter((c) => c + 1)
+        useCounter((c) => c + amount)
     }
 
     function handleDecrementButton() {
-        useCounter((c) => c - decrementAmount)
+        useCounter((c) => c - amount)
     }
 
     function handleResetButton() {
