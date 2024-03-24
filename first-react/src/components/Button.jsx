@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 function Button({ onClick, label }) {
   return (
@@ -9,3 +9,4 @@ function Button({ onClick, label }) {
 }
 
 export default Button
+

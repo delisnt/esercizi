@@ -1,10 +1,16 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/rules-of-hooks */
+
+import { useEffect, useState } from 'react';
 import Button from './Button'
 import CounterDisplay from './CounterDisplay';
 
 function Counter( { initialValue = 0, amount = 1}) {
 
     const [counter, useCounter] = useState(initialValue);
+
+    useEffect(() => {
+        console.log(`The amount is ${counter}`);
+    }, [counter])
 
     function handleIncrementButton() {
         useCounter((c) => c + amount)
