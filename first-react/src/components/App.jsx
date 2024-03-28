@@ -1,22 +1,16 @@
-import AlertClock from "./AlertClock"
-import Clock from "./Clock"
-import Counter from "./Counter"
-import Hello from "./Hello"
-import MouseClicker from "./MouseClicker"
-import Welcome  from "./Welcome"
+import Login from "./Login"
+import LoginForm from "./LoginForm"
 import React from "react"
 function App() {
+  function handleLogin( {username, password}) {
+    console.log(`You are logged as ${username}`)
+    console.log(password)
+  }
+
   return (
     <div>
-        <React.StrictMode>
-        <Hello/>
-        <Welcome name="John" age={18}/>
-        <AlertClock/>
-        <Counter/>          
-        <Clock/>
-        <MouseClicker/>
-        </React.StrictMode>
-
+        <Login onLogin={handleLogin}/>
+        <LoginForm onLogin={handleLogin}/>
     </div>
   )
 }
