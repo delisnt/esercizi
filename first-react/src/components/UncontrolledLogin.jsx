@@ -22,6 +22,7 @@ function UncontrolledLogin() {
         <input type="text" name='password'placeholder='password'/>
         <input type="checkbox" name='checkbox'/>
         <button>Submit</button>
+        <button type='reset'>RESET</button>
     </form>
   )
 }
