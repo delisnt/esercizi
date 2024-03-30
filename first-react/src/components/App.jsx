@@ -1,3 +1,4 @@
+import Colors from "./Colors";
 import Counter from "./Counter";
 import FocusableInput from "./FocusableInput";
 import Login from "./Login";
@@ -18,6 +19,11 @@ function App() {
       <LoginForm />
       <UncontrolledLogin />
       <FocusableInput />
+      <Colors colors={[
+        {name: 'Red', id: 1},
+        {name: 'Blue', id: 2},
+        {name: 'Green', id: 3}
+      ]}/>
     </React.StrictMode>
   );
 }
