@@ -3,6 +3,7 @@ import Counter from "./Counter";
 import FocusableInput from "./FocusableInput";
 import Login from "./Login";
 import LoginForm from "./LoginForm";
+import TodoList from "./TodoList";
 import UncontrolledLogin from "./UncontrolledLogin";
 import React from "react";
 
@@ -14,10 +15,7 @@ function App() {
 
   return (
     <React.StrictMode>
-      <Counter />
-      <Login onLogin={handleLogin} />
-      <LoginForm />
-      <UncontrolledLogin />
+      <TodoList/>
       <FocusableInput />
       <Colors colors={[
         {name: 'Red', id: 1},
