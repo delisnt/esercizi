@@ -2,7 +2,7 @@ import Age from "./Age"
 
 function Welcome(props) {
   return (
-    <div>
+    <div className="welcome">
     <p>Welcome, {props.name}!</p>  
     {props.age >= 18 && <Age age={props.age}/>}    
     {Boolean(props.age) && <Age age={props.age}/>}    
