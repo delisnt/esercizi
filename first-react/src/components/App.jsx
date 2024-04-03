@@ -1,13 +1,11 @@
-import Colors from "./Colors";
-import Counter from "./Counter";
+
 import FocusableInput from "./FocusableInput";
 import Clock from "./Clock"
-import Login from "./Login";
-import LoginForm from "./LoginForm";
 import TodoList from "./TodoList";
-import UncontrolledLogin from "./UncontrolledLogin";
 import React from "react";
 import Welcome from "./Welcome";
+import Container from "./Container";
+import Colors from "./Colors";
 
 function App() {
   function handleLogin({ username, password }) {
@@ -17,6 +15,7 @@ function App() {
 
   return (
     <React.StrictMode>
+    <Container title="My App!!">
       <Welcome name="Daniele" />
       <Clock />
       <TodoList />
@@ -28,6 +27,7 @@ function App() {
           { name: "Green", id: 3 },
         ]}
       />
+    </Container>
     </React.StrictMode>
   );
 }
