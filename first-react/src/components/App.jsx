@@ -6,6 +6,8 @@ import React from "react";
 import Welcome from "./Welcome";
 import Container from "./Container";
 import Colors from "./Colors";
+import { LanguageContext } from "./LanguageContext";
+import { useState } from "react";
 
 function App() {
   function handleLogin({ username, password }) {
@@ -13,11 +15,13 @@ function App() {
     console.log(password);
   }
 
+
   return (
     <React.StrictMode>
     <Container title="My App!!">
-      <Welcome name="Daniele" />
       <Clock />
+      <Welcome name="Daniele" />
+
       <TodoList />
       <FocusableInput />
       <Colors
