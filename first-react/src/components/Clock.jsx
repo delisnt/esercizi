@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { LanguageContext } from "./LanguageContext";
 
 function Clock() {
@@ -6,7 +6,6 @@ function Clock() {
 
   function handleSetLanguage(e) {
     setLanguage(e.target.value);
-    console.log(language);
   }
 
   const [date, setDate] = useState(new Date());

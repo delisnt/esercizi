@@ -1,39 +1,19 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import useHandleLogin from './useHandleLogin';
 
-function createData() {
-    return {
-        username: '', 
-        password: '',
-        session: false
-    };
-}
 
-function LoginFormData() {
-    const [data, setData] = useState(createData());
+function LoginForm() {
 
-    function handleInputChange(e) {
-        const { name, value, type, checked } = e.target;
-        const inputValue = type === 'checkbox' ? checked : value;
-
-        setData((prevData) => ({
-            ...prevData,
-            [name]: inputValue
-        }));
-    }
-
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log(data);
-    }
+    const {data, onHandleSubmit, onInputChange} = useHandleLogin()
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={onHandleSubmit}>
             <div>
                 <input 
                     type="text" 
                     name="username" 
                     value={data.username} 
-                    onChange={handleInputChange} 
+                    onChange={onInputChange} 
                     placeholder="Username" 
                 />
             </div>
@@ -42,7 +22,7 @@ function LoginFormData() {
                     type="password" 
                     name="password" 
                     value={data.password} 
-                    onChange={handleInputChange} 
+                    onChange={onInputChange} 
                     placeholder="Password" 
                 />
             </div>
@@ -52,7 +32,7 @@ function LoginFormData() {
                         type="checkbox" 
                         name="session" 
                         checked={data.session} 
-                        onChange={handleInputChange} 
+                        onChange={onInputChange} 
                     />
                 </label>
             </div>
@@ -61,4 +41,4 @@ function LoginFormData() {
     );
 }
 
-export default LoginFormData;
+export default LoginForm;
