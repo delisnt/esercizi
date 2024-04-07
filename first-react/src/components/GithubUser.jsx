@@ -6,6 +6,7 @@ function GithubUser({ username }) {
   const [error, setError] = useState(false)
 
   useEffect(() => {
+    setLoading(true)
     const fetchData = async () => {
       try {
         const response = await fetch(
@@ -16,6 +17,7 @@ function GithubUser({ username }) {
         }
         const jsonData = await response.json();
         setData(jsonData);
+        setLoading(false)
       } catch (error) {
         console.error(error);
       }
@@ -31,6 +33,7 @@ function GithubUser({ username }) {
 
   return (
     <div>
+      <h2>{loading && loading}</h2>
       <h2>{error && error}</h2>
       <h2>{data.name}</h2>
       <h3>{data.login}</h3>
