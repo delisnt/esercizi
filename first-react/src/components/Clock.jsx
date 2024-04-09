@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { LanguageContext } from "./LanguageContext";
 
 function Clock() {
-  const [language, setLanguage] = useState("en");
-
-  function handleSetLanguage(e) {
-    setLanguage(e.target.value);
-  }
+  const language = useContext(LanguageContext)
 
   const [date, setDate] = useState(new Date());
   useEffect(() => {
@@ -19,12 +16,7 @@ function Clock() {
     };
   }, []);
   return (
-    <LanguageContext.Provider>
       <div className="clock">
-        <select name="language" onChange={handleSetLanguage}>
-            <option value="en">EN</option>
-            <option value="it">IT</option>
-        </select>
         <h2>
           {language === "en"
             ? `Current Time:`
@@ -32,7 +24,6 @@ function Clock() {
         </h2>
         <h3>{date.toLocaleTimeString()}</h3>
       </div>
-    </LanguageContext.Provider>
   );
 }
 

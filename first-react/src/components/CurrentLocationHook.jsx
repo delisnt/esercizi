@@ -5,10 +5,6 @@ function CurrentLocationHook() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    console.log(location);
-  });
-
   function getLocation() {
     setLoading(true);
     setError(null)
