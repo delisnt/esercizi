@@ -4,7 +4,7 @@ import Container from "./Container";
 import Colors from "./Colors";
 import Counter from "./Counter";
 import LoginForm from "./LoginForm";
-import SearchUser from "./SearchUser";
+import SearchUser from "./GitHubUsers";
 import CurrentLocation from "./CurrentLocation";
 import { LanguageContext } from "./LanguageContext";
 import { useState } from "react";

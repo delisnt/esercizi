@@ -1,18 +1,18 @@
 import GithubUser from "./GithubUser";
-import { useGithubUser } from "./useGitHub";
+import { useGithubUser } from "./useGitHubUser";
 
 function SearchUser() {
-    const {handleGithubSubmit, handleGithubUsername, submitInput, inputValue} = useGithubUser()
+    const {handleInputChange, searchInput, handleSubmit, submitInput} = useGithubUser()
 
   return (
     <div>
-      <form onSubmit={handleGithubSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="username"
           id="username"
-          value={inputValue}
-          onChange={handleGithubUsername}
+          value={searchInput}
+          onChange={handleInputChange}
         />
         <button type="submit">Submit</button>
         <ul>

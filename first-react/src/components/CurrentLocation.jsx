@@ -7,7 +7,6 @@ function CurrentLocation() {
       <button onClick={getLocation}>GET POSITION</button>
       <h2>{loading && loading}</h2>
       <h2>{error && error}</h2>
-      <h2>{loading && loading}</h2>
       <h2>{location && `Longitude: ${location.longitude}`}</h2>
       <h2>{location && `Longitude: ${location.latitude}`}</h2>
     </>
