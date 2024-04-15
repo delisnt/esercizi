@@ -1,33 +1,24 @@
 import { useParams} from 'react-router-dom'
-import { useState } from "react";
 import { useEffect } from 'react';
+import UseGithubUser from './UseGithubUser';
 
 function GithubUser() {
-  const [user, setUser] = useState()
   const { username } = useParams()
-
-  async function fetchUser() {
-    const res = await fetch(`https://api.github.com/users/${username}`)
-    const json = await res.json()
-    setUser(json)
-    console.log(json);
-  }
+  const {userData, userError} = UseGithubUser()
 
   useEffect(() => {
     console.log(username);
   }, [username])
   
-
-  
 return (
   <div>
     <h2>{username}</h2>
-    <button onClick={fetchUser}>Get user</button>
-    {user && (
+    {userError && userError}
+    {userData && (
       <div>
-        <h2>{user.name}</h2>
-        <h3>{user.login}</h3>
-        <img src={user.avatar_url} alt="User avatar" />
+        <h2>{userData.name}</h2>
+        <h3>{userData.login}</h3>
+        <img src={userData.avatar_url} alt="User avatar" />
       </div>
     )}
   </div>
