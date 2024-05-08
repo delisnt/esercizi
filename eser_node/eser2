@@ -1,0 +1,3 @@
+crypto
+let string = crypto.randomUUID()
+console.log(string)
