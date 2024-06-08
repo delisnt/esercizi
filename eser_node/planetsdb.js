@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
+import { create, deleteById, getAll, getOneById, updateById} from './planets'
 require("dotenv").config();
 
 let planets = [
@@ -21,35 +22,15 @@ app.get("/", (req, res) => {
   res.status(200).send("Hello World!");
 });
 
-app.get("/api/planets", (req, res) => {
-  res.status(200).json(planets);
-});
+app.get("/api/planets", getAll );
 
-app.get("/api/planets/:id", (req, res) => {
-  const { id } = req.params;
-  const planet = planets.find((p) => p.id === Number(id));
-  res.status(200).send(planet);
-});
+app.get("/api/planets/:id", getOneById );
 
-app.post("/api/planets", (req, res) => {
-  const { id, name } = req.body;
-  const newPlanet = { id, name };
-  planets = [...planets, newPlanet];
-  res.status(201).json({ msg: "Planet added successfully" });
-});
+app.post("/api/planets", create );
 
-app.put("/api/planets/:id", (req, res) => {
-  const { id } = req.params;
-  const {name} = req.body
-  planets = planets.map(p => p.id === Number(id) ? ({...p, name}) : p);
-  res.status(201).json({ msg: "Planet edited successfully" });
-});
+app.put("/api/planets/:id", updateById );
 
-app.delete("/api/planet/:id", (req, res) => {
-  const { id } = req.params;
-  planets = planets.filter(p => p.id !== Number(id))
-  res.status(201).json({ msg: "Planet deleted successfully" });
-});
+app.delete("/api/planet/:id", deleteById );
 
 app.listen(process.env.PORT, () => {
   console.log(`Listening on localhost:${process.env.PORT}`);
